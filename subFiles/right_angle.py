@@ -1,7 +1,7 @@
 import json
 import subFiles.classes as cl
 import subFiles.input_functions as IFC
-
+import os
 
 with open('./text.json') as f:
     text = json.load(f)
@@ -20,6 +20,18 @@ def pythagoras(a,b,c):
         return [a,b,c]
 
 
+
+def calculate_triangle(tri):
+    input("started calculation")
+    for i in range(20):
+        lengths = pythagoras(tri.a, tri.b, tri.c)
+        tri.a, tri.b, tri.c = lengths[0], lengths[1], lengths[2]
+    os.system("cls")
+    tri.print_self()
+    input()
+
+
+
 def tri_input():
     print(text["triangle_diagram"])
 
@@ -32,10 +44,5 @@ def tri_input():
         IFC.text_to_int(input("c: (length)"))
     )
     print(triangle.a)
+    calculate_triangle(triangle)
     triangle.print_self()
-    input()
-
-
-def calculate(tri):
-    
-    lengths = lengths(tri.a, tri.b, tri.c)
