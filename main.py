@@ -1,4 +1,4 @@
-import subFiles.right_angle as RA
+import subFiles.triangle as T
 import os
 import sys
 import unit_tests as ut
@@ -19,7 +19,7 @@ with open('./text.json') as f:
 # I could have used if statements to do the same thing, but it would be harder to understand and would look messy
 calculations = {
     # "index": [function, "description"]
-    "1":[RA.tri_input, "Right angle triangle calculations"],
+    "1":[T.tri_input, "Right angle triangle calculations"],
 }
 
 

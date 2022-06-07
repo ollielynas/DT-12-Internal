@@ -1,7 +1,7 @@
 import unittest
 import subFiles.input_functions as IFC
 from subFiles.classes import *
-from subFiles.right_angle import *
+from subFiles.triangle import *
 
 
 class TestTextFunctions(unittest.TestCase):
