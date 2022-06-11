@@ -1,5 +1,5 @@
 {
     "intro":"\nEnter the index of the calculation you want to calculate using the number next to it.\neg. enter \"1\" to calculate anything relating to a right angle triangle\nenter \"q\" to quit\n\n",
     "invalid_index":"invalid index\n press enter to continue...\n",
-    "triangle_diagram": "|\\\n| \\\n|A \\\n|   \\\n|    \\\n|a    \\ c\n|      \\\n|       \\\n|B      C\\\n|---------\\\n      b\n"
+    "triangle_diagram": "|\\\n| \\\n|B \\\n|   \\\n|    \\\n|a    \\ c\n|      \\\n|       \\\n|C      A\\\n|---------\\\n      b\n"
 }

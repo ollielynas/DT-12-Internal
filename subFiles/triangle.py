@@ -3,6 +3,7 @@ import subFiles.classes as cl
 import subFiles.input_functions as IFC
 import os
 import math as m
+from math import degrees, sin, asin, radians
 
 
 with open('./text.json') as f:
@@ -31,17 +32,45 @@ def angle_sum(a,b,c):
             b = (180 - a - c)
         return [a,b,c]
 
-def sin_rule(tri):
-    ...
+def sin_rule(t):
+    la = [t.A, t.B, t.C, t.A, t.B, t.C] # angle list
+    ld = [t.a, t.b, t.c, t.a, t.b, t.c] # length list
+    for x in la:
+        if type(x) == int:
+            x = radians(x)
+            print(x)
+    
+    for i in range(0,3):
+        a = ld[i]
+        b = ld[i+1]
+        c = ld[i+2]
+        A = la[i]
+        B = la[i+1]
+        C = la[i+2]
+        
+        if type(b) == type(A) == type(B):
+            a = b*(sin(A)/sin(B))
+            print(a)
+
+    # for x in la:
+    #     if type(x) == int:
+    #         print("deg:",x,degrees(x))
+    #         la[la.index(x)] = degrees(x)
+            
+        
+    print(la,ld)
+    return t
 
 
 def calculate_triangle(tri):
-    for i in range(20):
+    for _ in range(20):
         values = pythagoras(tri.a, tri.b, tri.c)
         tri.a, tri.b, tri.c = values[0], values[1], values[2]
         
         values = angle_sum(tri.A, tri.B, tri.C)
         tri.A, tri.B, tri.C = values[0], values[1], values[2]
+        
+        tri = sin_rule(tri)
 
 
 def tri_input():

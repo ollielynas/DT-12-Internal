@@ -1,5 +1,7 @@
-import matplotlib.pyplot as mat
 import json
+
+import matplotlib.pyplot as mat
+
 with open('./text.json') as f:
     text = json.load(f)
 import subFiles.input_functions as IFC
@@ -30,14 +32,17 @@ class Triangle:
         x = IFC.guaranty_int(self.b) /4
         y = IFC.guaranty_int(self.a) / 4
         
-        if x >= y:
-            mat.xlim([0, x*6])
-            mat.ylim([0, x*6])
-        else:
-            mat.xlim([0, y*6])
-            mat.ylim([0, y*6])
+
+        mat.xlim([0, x*6])
+        mat.ylim([0, y*7])
         
-        mat.text(x*5, y*3, str(self.a))
+        mat.text(x*5, y*3 - 1, str(self.a))
+        mat.text(x*3, y-1, str(self.b))
+        mat.text(x*3, y*3 + 1, str(self.c))
+        mat.text(x*5, y*5, str(self.A))
+        mat.text(x*5, y*1, str(self.B))
+        mat.text(x*1, y*1-1, str(self.C))
+
         
         mat.plot([x,x+4*x],[y,y+4*y])
         mat.plot([x,x+4*x],[y,y])

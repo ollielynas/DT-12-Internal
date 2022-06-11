@@ -12,7 +12,6 @@ with open('./text.json') as f:
 
 
 
-
 # |---------------------- main menu -----------------------|
 
 # a dict that adds each number input to its own function, for readability. 

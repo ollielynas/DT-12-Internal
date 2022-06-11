@@ -15,7 +15,10 @@ def text_to_int(text):
         return "?"
 
 def guaranty_int(text):
-    text = text.lower()
+    if type(text) == str:
+        text = text.lower()
+    elif type(text) == int:
+        return text
     text = ''.join(ch for ch in text if ch.isdigit())
     try:
         return int(text)
