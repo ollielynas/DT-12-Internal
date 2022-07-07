@@ -12,23 +12,23 @@ with open('./text.json') as f:
 
 
 
-# this is the first function i wrote an it will calculate lengths using a**2 + b**2 = c **2
+# this is the first function I wrote an it will calculate lengths using a**2 + b**2 = c **2
 def pythagoras(a,b,c):
-        if type(a)==int and type(b)==int:
+        if type(a)!=str and type(b)!=str:
             c = (a**2 + b**2)**0.5
-        if type(c)==int and type(b)==int:
+        if type(c)!=str and type(b)!=str:
             a = (c**2 - b**2)**0.5
-        if type(a)==int and type(c)==int:
+        if type(a)!=str and type(c)!=str:
             b = (a**2 + c**2)**0.5
         return [a,b,c]
 
 
 def angle_sum(a,b,c):
-        if type(a)==int and type(b)==int:
+        if type(a)!=str and type(b)!=str:
             c = (180 - a - b)
-        if type(c)==int and type(b)==int:
+        if type(c)!=str and type(b)!=str:
             a = (180 - c - b)
-        if type(a)==int and type(c)==int:
+        if type(a)!=str and type(c)!=str:
             b = (180 - a - c)
         return [a,b,c]
 
@@ -36,7 +36,7 @@ def sin_rule(t):
     la = [t.A, t.B, t.C, t.A, t.B, t.C] # angle list
     ld = [t.a, t.b, t.c, t.a, t.b, t.c] # length list
     for x in la:
-        if type(x) == int:
+        if type(x) != str:
             x = radians(x)
             print(x)
     
@@ -48,7 +48,7 @@ def sin_rule(t):
         B = la[i+1]
         C = la[i+2]
         
-        if type(b) == type(A) == type(B):
+        if type(b) == type(A) == type(B) and type(B) != str:
             a = b*(sin(A)/sin(B))
             print(a)
 
@@ -58,7 +58,6 @@ def sin_rule(t):
     #         la[la.index(x)] = degrees(x)
             
         
-    print(la,ld)
     return t
 
 
@@ -85,11 +84,11 @@ def tri_input():
         IFC.text_to_int(input("c: (length): "))
     )
     
-    
-    if type(triangle.A) == type(triangle.B) == type(triangle.C) == int and round(triangle.A + triangle.B + triangle.C, 4) != 180:
+    if type(triangle.A) == type(triangle.B) == type(triangle.C) and type(triangle.C) != str and round(triangle.A + triangle.B + triangle.C, 4) != 180:
         os.system("cls")
         input("invalid angles")
         return
 
     calculate_triangle(triangle)
     triangle.plot()
+

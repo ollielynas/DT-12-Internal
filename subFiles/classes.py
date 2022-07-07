@@ -49,3 +49,11 @@ class Triangle:
         mat.plot([x+4*x,x+(4*x)],[y,y+(4*y)])
         mat.show()
 
+class Circle:
+    def __init__(self, radius, circumference, area):
+        self.radius = radius
+        self.circumference = circumference
+        self.area = area
+
+    def print(self):
+        print(f"radius : {self.radius} \ncircumference : {self.circumference}\narea : {self.area}")

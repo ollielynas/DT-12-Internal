@@ -4,6 +4,7 @@ import sys
 import unit_tests as ut
 import json
 import subFiles.input_functions as IFC
+import subFiles.circle as CIR
 
 with open('./text.json') as f:
     text = json.load(f)
@@ -19,12 +20,15 @@ with open('./text.json') as f:
 calculations = {
     # "index": [function, "description"]
     "1":[T.tri_input, "Right angle triangle calculations"],
+    "2": [CIR.circle_input, "Circle calculations"],
+    "3":[quit, "Quit"]
 }
 
 
 # here is a almost finished user interface, it uses lists and dicts in order to make it easy
 # to add more features and commands, for example if a wanted to add a circle calculator,
 # i could simply add it to the dict without having to add code to this loop
+# this is to allow for an agile 
 
 while True:
     if __name__ == '__main__':
@@ -33,10 +37,9 @@ while True:
         for i in calculations.keys():
             print(f"{i}). {calculations[i][1]}")
 
-        index = input("-----|")
+        index = str(IFC.text_to_int(input("-----|")))
         index.replace("\"", "")
-        if index.lower().replace(" ","") == "q":
-            quit()
+
         
         IFC.clean_int_input(index)
         if index in calculations.keys():

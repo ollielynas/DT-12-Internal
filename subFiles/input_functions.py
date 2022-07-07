@@ -12,7 +12,7 @@ def text_to_int(text):
     try:
         return int(text)
     except:
-        return "?"
+        return " ? "
 
 def guaranty_int(text):
     if type(text) == str:
