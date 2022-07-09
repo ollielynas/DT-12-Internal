@@ -10,9 +10,6 @@ with open('./text.json') as f:
     text = json.load(f)
 
 
-
-
-
 # |---------------------- main menu -----------------------|
 
 # a dict that adds each number input to its own function, for readability. 
@@ -23,7 +20,6 @@ calculations = {
     "2": [CIR.circle_input, "Circle calculations"],
     "3":[quit, "Quit"]
 }
-
 
 # here is a almost finished user interface, it uses lists and dicts in order to make it easy
 # to add more features and commands, for example if a wanted to add a circle calculator,
