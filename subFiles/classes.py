@@ -29,12 +29,24 @@ class Triangle:
 
     def plot(self):
 
-        x = IFC.guaranty_int(self.b) /4
-        y = IFC.guaranty_int(self.a) / 4
+        # x = IFC.guaranty_int(self.b) /4
+        # y = IFC.guaranty_int(self.a) / 4
         
+        x = 10
+        y = 10
 
         mat.xlim([0, x*6])
         mat.ylim([0, y*7])
+        
+        if self.a != str: self.a = round(self.a, 4)
+        if self.b != str: self.b = round(self.a, 4)
+        if self.c != str: self.c = round(self.a, 4)
+        if self.A != str: self.A = round(self.a, 4)
+        if self.B != str: self.B = round(self.a, 4)
+        if self.C != str: self.C = round(self.a, 4)
+
+        
+        
         
         mat.text(x*5, y*3 - 1, str(self.a))
         mat.text(x*3, y-1, str(self.b))

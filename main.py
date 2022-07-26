@@ -1,7 +1,5 @@
 import subFiles.triangle as T
 import os
-import sys
-import unit_tests as ut
 import json
 import subFiles.input_functions as IFC
 import subFiles.circle as CIR
@@ -43,6 +41,7 @@ while True:
             calculations[index][0]()
 
         else:
+            os.system("cls")
             input(text["invalid_index"])
     else:
         print(f"invalid args {__name__}")

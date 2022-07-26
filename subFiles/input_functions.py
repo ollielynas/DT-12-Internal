@@ -1,4 +1,3 @@
-import pyperclip
 
 
 def clean_int_input(text):
@@ -19,8 +18,8 @@ def guaranty_int(text):
         text = text.lower()
     elif type(text) == int:
         return text
-    text = ''.join(ch for ch in text if ch.isdigit())
+    
     try:
-        return int(text)
+        return float(''.join(c for c in text if (c.isdigit() or c == '.')))
     except:
         return 10
