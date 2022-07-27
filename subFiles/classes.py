@@ -38,12 +38,13 @@ class Triangle:
         mat.xlim([0, x*6])
         mat.ylim([0, y*7])
         
-        if self.a != str: self.a = round(self.a, 4)
-        if self.b != str: self.b = round(self.a, 4)
-        if self.c != str: self.c = round(self.a, 4)
-        if self.A != str: self.A = round(self.a, 4)
-        if self.B != str: self.B = round(self.a, 4)
-        if self.C != str: self.C = round(self.a, 4)
+        print("float")
+        if type(self.a) != str: self.a = round(self.a, 4)
+        if type(self.b) != str: self.b = round(self.b, 2)
+        if type(self.c) != str: self.c = round(self.c, 2)
+        if type(self.A) != str: self.A = round(self.A, 2)
+        if type(self.B) != str: self.B = round(self.B, 2)
+        if type(self.C) != str: self.C = round(self.C, 2)
 
         
         
