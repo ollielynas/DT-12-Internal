@@ -9,13 +9,13 @@ import subFiles.input_functions as IFC
 
 class Triangle:
     def __init__(self, A, B, C, a, b, c):
-        self.A = A # length
-        self.B = B # length
-        self.C = C # length
-        self.a = a # angle
-        self.b = b # angle
-        self.c = c # angle
-    
+        self.A = A  # length
+        self.B = B  # length
+        self.C = C  # length
+        self.a = a  # angle
+        self.b = b  # angle
+        self.c = c  # angle
+
     def print_self(self):
         d = text["triangle_diagram"]
         d = d.replace("a", "\r|"+str(self.a))
@@ -31,24 +31,27 @@ class Triangle:
 
         # x = IFC.guaranty_int(self.b) /4
         # y = IFC.guaranty_int(self.a) / 4
-        
+
         x = 10
         y = 10
 
         mat.xlim([0, x*6])
         mat.ylim([0, y*7])
-        
-        print("float")
-        if type(self.a) != str: self.a = round(self.a, 4)
-        if type(self.b) != str: self.b = round(self.b, 2)
-        if type(self.c) != str: self.c = round(self.c, 2)
-        if type(self.A) != str: self.A = round(self.A, 2)
-        if type(self.B) != str: self.B = round(self.B, 2)
-        if type(self.C) != str: self.C = round(self.C, 2)
 
-        
-        
-        
+        print("float")
+        if type(self.a) == float:
+            self.a = round(self.a, 4)
+        if type(self.b) == float:
+            self.b = round(self.b, 2)
+        if type(self.c) == float:
+            self.c = round(self.c, 2)
+        if type(self.A) == float:
+            self.A = round(self.A, 2)
+        if type(self.B) == float:
+            self.B = round(self.B, 2)
+        if type(self.C) == float:
+            self.C = round(self.C, 2)
+
         mat.text(x*5, y*3 - 1, str(self.a))
         mat.text(x*3, y-1, str(self.b))
         mat.text(x*3, y*3 + 1, str(self.c))
@@ -56,11 +59,11 @@ class Triangle:
         mat.text(x*5, y*1, str(self.B))
         mat.text(x*1, y*1-1, str(self.C))
 
-        
-        mat.plot([x,x+4*x],[y,y+4*y])
-        mat.plot([x,x+4*x],[y,y])
-        mat.plot([x+4*x,x+(4*x)],[y,y+(4*y)])
+        mat.plot([x, x+4*x], [y, y+4*y])
+        mat.plot([x, x+4*x], [y, y])
+        mat.plot([x+4*x, x+(4*x)], [y, y+(4*y)])
         mat.show()
+
 
 class Circle:
     def __init__(self, radius, circumference, area):
@@ -69,4 +72,5 @@ class Circle:
         self.area = area
 
     def print(self):
-        print(f"radius : {self.radius} \ncircumference : {self.circumference}\narea : {self.area}")
+        print(
+            f"radius : {self.radius} \ncircumference : {self.circumference}\narea : {self.area}")
