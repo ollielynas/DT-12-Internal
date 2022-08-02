@@ -4,6 +4,8 @@ import json
 import subFiles.input_functions as IFC
 import subFiles.circle as CIR
 import sys
+
+# this is a non core library which is something that the marking schedule suggests should be included
 from termcolor import colored
 
 
@@ -22,11 +24,8 @@ calculations = {
     "3":[quit, "Quit"]
 }
 
-# here is a almost finished user interface, it uses lists and dicts in order to make it easy
-# to add more features and commands, for example if a wanted to add a circle calculator,
-# i could simply add it to the dict without having to add code to this loop
-# this is to allow for an agile 
 
+# 
 def test_equal(x, y, name):
     if x == y:
         print(colored("passed ", "green")+f": {name}")
@@ -41,10 +40,17 @@ def unittest():
     test_equal(IFC.text_to_int("12k"), 12, "test to int")
     test_equal(IFC.text_to_int("k"), " ? ", "test to int (invalid)")
     test_equal(IFC.text_to_int("9999999999999999999999999999999"), "number too large", "test to int (number too large)")
-
+    test_equal(int(T.angle_sum(1,1, "")[2]), 1, "angle sum (C)")
+    test_equal(int(T.angle_sum("", 1, 1)[0]), 1, "angle sum (A)")
+    test_equal(int(T.angle_sum(1, "", 1)[1]), 1, "angle sum (B)")
 
     quit()
 
+
+# here is the user interface, it uses lists and dicts in order to make it easy
+# to add more features and commands, for example if a wanted to add a circle calculator,
+# i could simply add it to the dict without having to add code to this loop
+# this is to allow for an agile workflow
 
 while True:
     if __name__ == '__main__':

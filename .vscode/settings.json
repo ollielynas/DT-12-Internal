@@ -13,6 +13,7 @@
         "pipreqs",
         "pyplot",
         "Snyk",
+        "termcolor",
         "xlim",
         "ylim"
     ]

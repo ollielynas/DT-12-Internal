@@ -5,6 +5,18 @@ def clean_int_input(text):
     text = ''.join(ch for ch in text if ch.isdigit())
     return text
 
+
+# converts text input to int. is there is no clear valid int it will return a string ("?")
+def text_to_int(text):
+    text = text.lower()
+    text = ''.join(ch for ch in text if ch.isdigit())
+    try:
+        if int(text) > 9999:
+            return("number too large")
+        return int(text)
+    except:
+        return " ? "
+
 # converts text input to int. is there is no clear valid int it will return a string ("?")
 def text_to_int(text):
     text = text.lower()
