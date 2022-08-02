@@ -64,8 +64,11 @@ while True:
         index = str(IFC.text_to_int(input("-----|")))
         index.replace("\"", "")
 
+        index = IFC.clean_int_input(index)
         
-        IFC.clean_int_input(index)
+        if type(index) == float:
+            index = str(int(index))
+
         if index in calculations.keys():
             os.system("cls")
             calculations[index][0]()
