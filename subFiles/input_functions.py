@@ -10,6 +10,8 @@ def text_to_int(text):
     text = text.lower()
     text = ''.join(ch for ch in text if ch.isdigit())
     try:
+        if int(text) > 9999:
+            return("number too large")
         return int(text)
     except:
         return " ? "

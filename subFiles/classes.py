@@ -6,7 +6,7 @@ with open('./text.json') as f:
     text = json.load(f)
 import subFiles.input_functions as IFC
 
-
+# stores all the relevant data for a triangle
 class Triangle:
     def __init__(self, A, B, C, a, b, c):
         self.A = A  # length
@@ -64,7 +64,7 @@ class Triangle:
         mat.plot([x+4*x, x+(4*x)], [y, y+(4*y)])
         mat.show()
 
-
+# stores the relevant data for a circle
 class Circle:
     def __init__(self, radius, circumference, area):
         self.radius = radius

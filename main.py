@@ -3,6 +3,9 @@ import os
 import json
 import subFiles.input_functions as IFC
 import subFiles.circle as CIR
+import sys
+from termcolor import colored
+
 
 with open('./text.json') as f:
     text = json.load(f)
@@ -24,9 +27,30 @@ calculations = {
 # i could simply add it to the dict without having to add code to this loop
 # this is to allow for an agile 
 
+def test_equal(x, y, name):
+    if x == y:
+        print(colored("passed ", "green")+f": {name}")
+    else:
+        print(colored("failed : ", "red")+f"{name}")
+
+def unittest():
+    print("Unit Testing\n==================")
+    test_equal(IFC.clean_int_input("3 fdk 4j"), "34", "clean_int_input")
+    test_equal(IFC.guaranty_int("123f"), 123, "guaranty int (valid)")
+    test_equal(IFC.guaranty_int("e"), 10, "guaranty int (invalid)")
+    test_equal(IFC.text_to_int("12k"), 12, "test to int")
+    test_equal(IFC.text_to_int("k"), " ? ", "test to int (invalid)")
+    test_equal(IFC.text_to_int("9999999999999999999999999999999"), "number too large", "test to int (number too large)")
+
+
+    quit()
+
+
 while True:
     if __name__ == '__main__':
         os.system("cls")
+        if str(sys.argv).find("test") != -1:
+            unittest()
         print(text["intro"])
         for i in calculations.keys():
             print(f"{i}). {calculations[i][1]}")
@@ -44,5 +68,5 @@ while True:
             os.system("cls")
             input(text["invalid_index"])
     else:
-        print(f"invalid args {__name__}")
         quit()
+

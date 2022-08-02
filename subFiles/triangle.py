@@ -50,7 +50,6 @@ def sin_rule(t):
         A = la[i]
         B = la[i+1]
         C = la[i+2]
-        print(i)
         if type(b) != str and type(A) != str and type(B) != str and type((b*sin(A))/sin(B)) != complex:
             e = (b*sin(A))/sin(B)
             if i == 0:
